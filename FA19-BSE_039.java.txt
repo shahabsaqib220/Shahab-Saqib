@@ -1,0 +1,82 @@
+package DS_Lab_Assignment;
+
+class Node 
+{ 
+    int Data; 
+    Node next; 
+  
+    public Node(int Data) 
+    { 
+        this.Data = Data; 
+        this.next = null; 
+    } 
+
+} 
+
+class Queue
+{ 
+    Node front, rear; 
+  
+    public Queue() 
+    { 
+        front = rear = null; 
+    } 
+
+  
+    
+
+    
+    void dequeue() 
+    { 
+        if (front == null) 
+	{
+            System.out.println("Empty!");
+	    return; 
+	}          
+
+  
+        Node Temp_v = front; 
+        front = front.next; 
+         
+        if (front == null) 
+        {
+            rear = null; 
+        } 
+
+    }
+
+}
+public void queue(int Data) 
+    { 
+        Node Temp_v = new Node(Data); 
+        
+        if (rear == null)
+	{ 
+            front = rear = Temp_v; 
+            return; 
+        } 
+
+         
+        rear.next = Temp_v; 
+        rear = Temp_v; 
+    } 
+
+  
+public class ASSIGNMENTT{ 
+    public static void main(String[] args) 
+    { 
+        Queue q = new Queue(); 
+       
+        q.dnqueue();
+        q.enqueue(13); 
+        q.enqueue(40); 
+        q.dequeue(); 
+        q.dequeue(); 
+
+        q.enqueue(80); 
+        q.enqueue(54); 
+        q.enqueue(50); 
+        q.dequeue(); 
+    } 
+
+}
